@@ -1,5 +1,6 @@
 from turtle import Turtle, Screen
-import random
+#import random
+#import time
 
 screen = Screen()
 
@@ -9,11 +10,11 @@ class Ball(Turtle):
         super().__init__()
         self.color("white")
         self.shape("circle") # all turtles starts at 20x20 pixels
-        #self.shapesize(stretch_len=1, stretch_wid=5)
+        #self.shapesize(width = 20, height = 20)
         self.penup()
-        self.goto(0, 0)
+     
 
-    def moving_random(self):
-        random_x = random.randint (-350, 350)
-        random_y = random.randint (-250, 250)
-        self.goto(random_x, random_y)
+    def move(self):
+        new_x = self.xcor + 10
+        new_y = self.ycor + 10
+        self.goto(new_x, new_y)

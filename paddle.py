@@ -1,7 +1,5 @@
 from turtle import Turtle, Screen
 
-screen = Screen()
-
 # 'paddle' changed into 'self'
 # This will enable you to tap in turtle class and
 # use its methods and attributes
