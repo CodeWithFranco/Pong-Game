@@ -35,7 +35,7 @@ screen.onkey(l_paddle.go_down, "s")
 
 game_is_on = True
 while game_is_on:
-    time.sleep(.1)
+    time.sleep(pong.move_speed)
     screen.update()
     pong.move()
 
@@ -44,17 +44,19 @@ while game_is_on:
         #bounce_y off the wall (Top and Bottom)
         pong.bounce_y()
 
-    #Detect collision with r_paddle
+    #Detect collision with r_paddle & l_paddle
     if pong.distance(r_paddle) < 50 and pong.xcor() > 320 or pong.distance(l_paddle) < 50 and pong.xcor() < -320:
         pong.bounce_x()
 
     #Detect the ball that goes at the edge of the screen (R) 
     if pong.xcor() > 380:
         pong.reset()
+        scoreboard.l_point()
 
     #Detect the ball that goes at the edge of the screen (L)
     if pong.xcor() < -380:
         pong.reset()
+        scoreboard.r_point()
 
 
 screen.exitonclick()
